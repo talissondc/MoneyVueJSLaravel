@@ -3,9 +3,24 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    name: 'Dashboard',
-    component: () => import('../pages/Dashboard')
+    redirect: '/login'
   },
+  {
+    path: '/',
+    name: 'Dashboard',
+    meta: { requiresAuth: true },
+    component: () => import('@/pages/Dashboard')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/pages/Login')
+  },
+  {
+    path: '/signup',
+    name: 'SignUp',
+    component: () => import('@/pages/SignUp')
+  }
 ]
 
 const router = createRouter({
