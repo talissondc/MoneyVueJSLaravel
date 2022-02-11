@@ -4,8 +4,8 @@
   </button>
   <form :class="$style.form">
     <h2>Cadastrar transação</h2>
-    <input type="text" placeholder="Titulo" :model='form.title'>
-    <input type="number" placeholder="0" :modal='form.value'>
+    <Input type="text" placeholder="Titulo" :model='form.title' />
+    <Input type="number" placeholder="0" :modal='form.value' />
     <div :class="$style.selectButtonsContainer">
       <button 
       :class="activeClassGreen ? $style.green : ''"
@@ -24,14 +24,21 @@
         <span>Saída</span>
       </button>
     </div>
-    <input type="text" placeholder="Categoria" :model='form.category'>
-    <button :class="$style.submitButton">Cadastrar</button>  
+    <Input type="text" placeholder="Categoria" :model='form.category' />
+    <SubmitButton :class="$style.submitButton">Cadastrar</SubmitButton>  
   </form>    
 </template>
 
 <script>
+import Input from '@/components/input';
+import SubmitButton from '@/components/submitButton';
+
 export default {
   name:"NewTransaction",
+  components: {
+    Input,
+    SubmitButton
+  },
   emits: ["closeModalEvent"],
   data: () => ({
     form: {
