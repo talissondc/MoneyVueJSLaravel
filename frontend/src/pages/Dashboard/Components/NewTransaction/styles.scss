@@ -1,0 +1,95 @@
+.modalClose {
+  border: 0;
+  background: transparent;
+  transition: filter 0.2s;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}
+
+.form {
+  h2 {
+    font-size: 1.5rem;
+    color: var(--text-title);
+    margin-bottom: 2rem;
+  }
+
+  input {
+    width: 100%;
+    height: 4rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    border: 1px solid #d7d7d7;
+    border-radius: 0.25rem;
+    padding: 0 1.5rem;
+    background: #e7e9ee;
+
+    &::placeholder {
+      color: var(--test-body);
+    }
+
+    & + input {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.selectButtonsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d7d7d7;
+    border-radius: 0.25rem;
+    height: 4rem;
+    background: var(--background);
+
+    &:hover {
+      border-color: #b7b7b7;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      margin-left: 1rem;
+      font-size: 1rem;
+    }
+  }
+
+  .green {
+    background: rgba($color: #33cc95, $alpha: 0.1)
+  }
+  .red {
+    background: rgba($color: #e52d4d, $alpha: 0.1)
+  }
+}
+
+.submitButton {
+  width: 100%;
+  height: 4rem;
+  margin-top: 1.5rem;
+  border: 0;
+  border-radius: 0.25rem;
+  color: var(--shape);
+  background: var(--green);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: filter 0.2s;
+
+  &:hover {
+   filter:brightness(0.8);
+  }
+}

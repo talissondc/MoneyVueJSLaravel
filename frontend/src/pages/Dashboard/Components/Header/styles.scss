@@ -1,0 +1,34 @@
+.header {
+  background: var(--blue);
+}
+
+.content {
+  max-width: 1120px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1rem 12rem;
+
+  button {
+    border: 0;
+    width: 12rem;
+    height: 3rem;
+    background: var(--blue-light);
+    
+    font-size: 1rem;
+    line-height: 1.5rem;
+    
+    color: var(--shape);
+
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+
+    & + button {
+      margin-left: 0.5rem;
+    }
+  }
+}

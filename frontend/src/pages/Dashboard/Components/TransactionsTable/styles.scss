@@ -1,0 +1,42 @@
+.container {
+  max-width: 1120px;
+  margin: auto;
+
+  table {
+    width: 100%;
+    margin-top: 2.5rem;
+    border: 0;
+    border-spacing:0 0.5rem;
+    padding: 1rem;
+
+    th {
+      font-size: 1rem;
+      font-weight: normal;
+      color: var(--text-body);
+      padding: 1rem 2rem;
+      text-align: left;
+      line-height: 1.5rem
+    }
+
+    td {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      background: var(--shape);
+      padding: 1rem 2rem;
+      border-radius: 0.25rem;
+      color: var(--text-body);
+
+      &:first-child {
+        color: var(--title);
+      }
+
+      &.deposit {
+        color: var(--green);
+      }
+
+      &.witdraw {
+        color: var(--red);
+      }
+    }
+  }
+}
