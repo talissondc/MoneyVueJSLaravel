@@ -1,13 +1,13 @@
 <template>
-  <input :class="$style.input" :type="type" :placeholder="placeholder">
+  <input :class="$style.input" :type="type" :placeholder="placeholder" @input="$emit('update:modelValue', $event.target.value)">
 </template>
 
 <script>
 export default {
   props: {
     placeholder: String,
-    type: String
-  }
+    type: String,
+  }, 
 }
 </script>
 
