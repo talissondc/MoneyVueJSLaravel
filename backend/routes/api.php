@@ -19,4 +19,5 @@ Route::prefix('auth')->group(function () {
 Route::prefix('transaction')->middleware('jwt.auth')->group(function () {
     Route::get('/', [TransactionController::class, 'getTransactions']);
     Route::post('/', [TransactionController::class, 'postTransaction']);
+    Route::delete('/{id}', [TransactionController::class, 'deleteTransaction']);
 });

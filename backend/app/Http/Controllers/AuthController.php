@@ -10,13 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    private $userModel;
-
-    public function __construct()
-    {
-        $this->userModel = new User();
-    }
-
     public function register(Request $request)
     {
         $validator = Validator::make($request->json()->all(), [
@@ -33,7 +26,7 @@ class AuthController extends Controller
         $email = $request->email;
         $password = Hash::make($request->password);
 
-        $this->userModel->create([
+        User::query()->create([
             'name' => $name,
             'email' => $email,
             'password' => $password

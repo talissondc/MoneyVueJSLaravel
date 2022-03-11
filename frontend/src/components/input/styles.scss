@@ -1,19 +1,84 @@
-.input {
+.inputContainer {
   width: 100%;
   height: 4rem;
+  display: flex;
+  border: 1px solid #d7d7d7;
+  border-radius: 0.25rem;
+  align-items: center;
+  background: #e7e9ee;
+
+  & + div {
+    margin-top: 1rem;
+  }
+}
+
+.activeError{
+  border: 1px solid #c53030;
+}
+
+.input {
+  flex: 1;
+  height: 100%;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem;
-  border: 1px solid #d7d7d7;
-  border-radius: 0.25rem;
+  border: 0 none;
   padding: 0 1.5rem;
-  background: #e7e9ee;
+  background: transparent;
 
   &::placeholder {
     color: var(--test-body);
   }
 
-  & + input {
-    margin-top: 1rem;
+  &:focus {
+    outline: 0;
+  }  
+}
+
+.tip {
+  height: 1.5rem;
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+
+  svg {
+    margin: 0;
+    color: #c53030
+  }
+
+  span {
+    visibility: hidden;
+    position: absolute;
+    width: 7.5rem;
+    background: #c53030;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -3.75rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-align: center;
+    padding: 0.3rem 0;
+    border-radius: 0.4rem;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .6s;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 100%; /* At the bottom of the tooltip */
+      left: 50%;
+      margin-left: -0.3rem;
+      border-width: 0.3rem;
+      border-style: solid;
+      border-color: #c53030 transparent transparent transparent;
+    }
+  }
+
+  &:hover {
+    span {
+      visibility: visible;
+      opacity: 1;
+    }
   }
 }

@@ -15,7 +15,12 @@
       color: var(--text-body);
       padding: 1rem 2rem;
       text-align: left;
-      line-height: 1.5rem
+      line-height: 1.5rem;
+
+      &:last-child {
+        text-align: center;
+      }
+       
     }
 
     td {
@@ -26,6 +31,16 @@
       border-radius: 0.25rem;
       color: var(--text-body);
 
+      button {
+        border: 0;
+        background: transparent;
+        transition: filter 0.2s;
+  
+        &:hover {
+          filter: brightness(0.8);
+        }
+      }
+
       &:first-child {
         color: var(--title);
       }
@@ -34,8 +49,12 @@
         color: var(--green);
       }
 
-      &.witdraw {
+      &.withdraw {
         color: var(--red);
+      }
+
+      &:last-child {
+        text-align: center;
       }
     }
   }

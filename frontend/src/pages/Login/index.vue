@@ -3,8 +3,8 @@
     <img src="@/assets/logo.svg"/>
     <div :class="$style.loginContent">
       <form>
-        <Input type='text' placeholder='Email' v-model='form.email'/>
-        <Input type='password' placeholder='Senha' v-model='form.password' />
+        <Input type='text' placeholder='Email' v-model='form.email' :errorObject="inputErrorEmail" />
+        <Input type='password' placeholder='Senha' v-model='form.password' :errorObject="inputErrorPassword" />
         <SubmitButton @click="login">Entrar</SubmitButton>
       </form> 
       <router-link to="/signup">Cadastrar</router-link> 
@@ -21,12 +21,20 @@ export default {
   name:"Login",
   components: {
     Input,
-    SubmitButton
+    SubmitButton,
   },
   data: () => ({
     form: {
       email: '',
       password: ''
+    },
+    inputErrorEmail: {
+      error: false,
+      message: ''
+    } ,
+    inputErrorPassword: {
+      error: false,
+      message: ''
     }
   }),
   methods: {
@@ -37,12 +45,32 @@ export default {
           
          const response = await this.actionLogin(this.form);
         
-         if(response != 200) {
-           return alert("Cheque suas credenciais!");
+         if(response != 200) { 
+            this.inputErrorPassword.message = "Cheque suas credenciais!";
+            this.inputErrorPassword.error = true;
+            this.inputErrorEmail.message = "Cheque suas credenciais!";
+            this.inputErrorEmail.error = true;
          }
         
         this.$router.push('/home');
-      }  
+      } 
+
+      if(!this.form.email) {
+        this.inputErrorEmail.message = "Email não pode ser vazio!";
+        this.inputErrorEmail.error = true;
+      } else {
+        this.inputErrorEmail.message = "";
+        this.inputErrorEmail.error = false;
+      }
+
+      if(!this.form.password) {
+        this.inputErrorPassword.message = "Senha não pode ser vazia!";
+        this.inputErrorPassword.error = true;
+      } else {
+        this.inputErrorPassword.message = "";
+        this.inputErrorPassword.error = false;
+      }
+
     }
   }
 }

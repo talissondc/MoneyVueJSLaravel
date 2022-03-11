@@ -1,0 +1,3 @@
+export const SET_TRANSACTIONS = 'dashboard/SET_TRANSACTIONS';
+export const SET_NEW_TRANSACTION = 'dashboard/SET_NEW_TRANSACTION';
+export const DELETE_TRANSACTION = 'dashboard/DELETE_TRANSACTION';

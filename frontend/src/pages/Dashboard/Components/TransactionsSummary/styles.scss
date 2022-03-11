@@ -33,7 +33,6 @@
 .summaryTotal {
   border-radius: 0.25rem;
   padding: 1.5rem 2rem;
-  background: var(--green);
   width: 22rem;
   margin: 1rem;
   height: 9rem;
@@ -53,4 +52,13 @@
     color: var(--shape);
     font-weight: 450;
   }
+
+  &.green {
+    background: var(--green);
+  }
+
+  &.red {
+    background: var(--red);
+  }
 }
+

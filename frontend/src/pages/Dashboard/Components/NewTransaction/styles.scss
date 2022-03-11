@@ -55,4 +55,8 @@
   .red {
     background: rgba($color: #e52d4d, $alpha: 0.1)
   }
+
+  .error {
+    border: 1px solid #e52d4d;
+  }
 }
